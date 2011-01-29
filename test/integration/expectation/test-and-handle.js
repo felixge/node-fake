@@ -2,7 +2,7 @@ var common = require('../../common');
 var assert = common.assert;
 var fake = common.fake;
 
-var scene = new fake.Scene();
+var scene = fake.scene();
 
 (function testHandle() {
   var input = {any: 'object 1'};

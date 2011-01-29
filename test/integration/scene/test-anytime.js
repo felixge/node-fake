@@ -3,7 +3,7 @@ var assert = common.assert;
 var fake = common.fake;
 
 var object = {};
-var scene = new fake.Scene();
+var scene = fake.scene();
 
 (function testInOrder() {
   scene.anytime(object, 'a');
