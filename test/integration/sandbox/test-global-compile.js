@@ -1,4 +1,4 @@
-var common = require('../common');
+var common = require('../../common');
 var assert = common.assert;
 var fake = common.fake;
 
