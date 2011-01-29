@@ -17,12 +17,9 @@ var scene = fake.scene();
   scene.expect(object, 'a');
   scene.expect(object, 'b');
 
-  var err;
-  try {
+  assert.throws(function() {
     object.b();
-  } catch (e) {
-    err = e;
-  }
+  }, /different call/);
 
-  assert.ok(err);
+  scene.reset();
 })();

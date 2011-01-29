@@ -23,14 +23,11 @@ var scene = fake.scene();
     .expect(callback)
     .withArgs();
 
-  var gotErr;
-  try {
+  assert.throws(function() {
     callback(arg);
-  } catch (e) {
-    gotErr = e;
-  }
+  }, /count/i);
 
-  assert.ok(gotErr);
+  scene.reset();
 })();
 
 (function testWrongArg() {
@@ -41,13 +38,10 @@ var scene = fake.scene();
     .expect(callback)
     .withArgs(arg);
 
-  var gotErr;
-  try {
+  assert.throws(function() {
     var otherArg = {any: 'value 2'};
     callback(otherArg);
-  } catch (e) {
-    gotErr = e;
-  }
+  }, /different args/i);
 
-  assert.ok(gotErr);
+  scene.reset();
 })();

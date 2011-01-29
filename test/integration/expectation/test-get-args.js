@@ -8,7 +8,7 @@ var scene = fake.scene();
 (function testGetReferenceToLastArgs() {
   var args = scene
     .anytime(object, 'someMethod')
-    .times(Infinity)
+    .times(0, Infinity)
     .getArgs();
 
   (function testInitialValueIsEmptyArray() {
