@@ -8,14 +8,9 @@ var callback = scene.callback();
 (function testCallbackNotFired() {
   scene.expect(callback);
 
-  var gotErr;
-  try {
+  assert.throws(function() {
     scene.verify();
-  } catch (e) {
-    gotErr = e;
-  }
-
-  assert.ok(gotErr);
+  }, /unsatisifed/i);
 })();
 
 (function testCallbackFired() {

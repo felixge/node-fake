@@ -12,14 +12,9 @@ var scene = fake.scene();
     .times(2);
 
   // Scene should not verify without callback being called
-  var gotErr = false;
-  try {
+  assert.throws(function() {
     scene.verify();
-  } catch (e) {
-    gotErr = e;
-  }
-
-  assert.ok(gotErr);
+  }, /unsatisifed/i);
 
   // Scene should verify after two calls
   callback();
@@ -27,14 +22,9 @@ var scene = fake.scene();
   scene.verify();
 
   // Calling callback a third time should raise an error again
-  gotErr = false;
-  try {
+  assert.throws(function() {
     callback();
-  } catch (e) {
-    gotErr = e;
-  }
-
-  assert.ok(gotErr);
+  }, /unexpected/);
 })();
 
 (function testZeroToTwoTimes() {
@@ -53,12 +43,7 @@ var scene = fake.scene();
   scene.verify();
 
   // The third callback should cause trouble
-  var gotErr = false;
-  try {
+  assert.throws(function() {
     callback();
-  } catch (e) {
-    gotErr = e;
-  }
-
-  assert.ok(gotErr);
+  }, /unexpected/i);
 })();
