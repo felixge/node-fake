@@ -6,3 +6,4 @@ You gotta fake it till you make it.
 
 * Constructors
 * Become self-testing
+* NodeModuleScene / BrowserScriptScene?
