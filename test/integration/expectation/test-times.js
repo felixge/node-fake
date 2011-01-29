@@ -49,5 +49,16 @@ var scene = fake.scene();
 
   // Same should be true after the next two callbacks
   callback();
+  callback();
   scene.verify();
+
+  // The third callback should cause trouble
+  var gotErr = false;
+  try {
+    callback();
+  } catch (e) {
+    gotErr = e;
+  }
+
+  assert.ok(gotErr);
 })();
