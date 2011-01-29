@@ -6,4 +6,5 @@ You gotta fake it till you make it.
 
 * Useful error reporting
 * Become self-testing
+* Documentation
 * NodeModuleScene / BrowserScriptScene?
