@@ -9,7 +9,7 @@ var scene = new fake.Scene();
   var args = scene
     .anytime(object, 'someMethod')
     .times(Infinity)
-    .args();
+    .getArgs();
 
   (function testInitialValueIsEmptyArray() {
     assert.strictEqual(args.length, 0);
