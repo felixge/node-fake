@@ -2,7 +2,7 @@ var common = require('../../common');
 var assert = common.assert;
 var fake = common.fake;
 
-var sandbox = new fake.Sandbox();
+var sandbox = fake.sandbox();
 var globals = {};
 
 sandbox.setGlobals(globals);
