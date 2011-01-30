@@ -14,8 +14,8 @@ exec('find -E '+__dirname+' -regex ".+/test-.+\.js"', function(err, stdout) {
     });
 
   tests.forEach(function(file) {
-    var relative = file.substr(__dirname.length);
-    console.log(relative);
+    var relative = file.substr(__dirname.length+1);
+    console.log('node test/'+relative);
     require(file);
   });
 
