@@ -4,7 +4,7 @@ var fake = common.fake;
 
 var scene = fake.scene();
 
-(function testHandle() {
+(function testAndReturn() {
   var val = {any: 'object 1'};
 
   var callback = scene.callback();
