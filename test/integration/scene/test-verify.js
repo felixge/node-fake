@@ -10,7 +10,7 @@ var scene = fake.scene();
 })();
 
 (function testExpectationNotFullfilled() {
-  scene.anytime(object, 'someMethod');
+  scene.expectAnytime(object, 'someMethod');
 
   var exception;
   try {

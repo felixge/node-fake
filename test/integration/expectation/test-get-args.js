@@ -7,7 +7,7 @@ var scene = fake.scene();
 
 (function testGetReferenceToLastArgs() {
   var args = scene
-    .anytime(object, 'someMethod')
+    .expectAnytime(object, 'someMethod')
     .times(0, Infinity)
     .getArgs();
 

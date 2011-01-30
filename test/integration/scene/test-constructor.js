@@ -6,7 +6,7 @@ var scene = fake.scene();
 
 var MyClass = scene.class();
 (function testNewMyClass() {
-  scene.expect('new', MyClass)
+  scene.expectNext('new', MyClass)
 
   // Should not verify initially
   assert.throws(function() {
@@ -18,7 +18,7 @@ var MyClass = scene.class();
 })();
 
 (function testNewMyClass() {
-  scene.expect('new', MyClass)
+  scene.expectNext('new', MyClass)
 
   // Invoking the function without new should fail
   assert.throws(function() {

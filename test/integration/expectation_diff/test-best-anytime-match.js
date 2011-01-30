@@ -8,11 +8,11 @@ var scene = fake.scene();
   var callback = scene.callback();
 
   scene
-    .anytime(callback);
+    .expectAnytime(callback);
 
   var arg = {any: 'object'};
   scene
-    .anytime(callback)
+    .expectAnytime(callback)
     .withArgs(arg);
 
   // Should be matched by the second expectation, since it has a higher score

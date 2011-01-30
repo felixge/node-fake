@@ -9,7 +9,7 @@ var scene = fake.scene();
   var callback = scene.callback();
 
   scene
-    .expect(callback)
+    .expectNext(callback)
     .inContext(context);
 
   assert.throws(function() {
@@ -24,7 +24,7 @@ var scene = fake.scene();
   var callback = scene.callback();
 
   scene
-    .expect(callback)
+    .expectNext(callback)
     .inContext(context);
 
   callback.call(context);

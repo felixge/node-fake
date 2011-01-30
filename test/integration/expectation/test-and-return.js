@@ -10,7 +10,7 @@ var scene = fake.scene();
   var callback = scene.callback();
 
   scene
-    .expect(callback)
+    .expectNext(callback)
     .andReturn(val);
 
   var r = callback();

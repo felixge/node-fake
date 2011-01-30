@@ -12,7 +12,7 @@ var scene = fake.scene();
   var callback = scene.callback();
 
   scene
-    .expect(callback)
+    .expectNext(callback)
     .andHandle(function(val) {
       assert.strictEqual(this, context);
       assert.strictEqual(val, input);

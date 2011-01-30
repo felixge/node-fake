@@ -6,7 +6,7 @@ var scene = fake.scene();
 
 var callback = scene.callback();
 (function testCallbackNotFired() {
-  scene.expect(callback);
+  scene.expectNext(callback);
 
   assert.throws(function() {
     scene.verify();

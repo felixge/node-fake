@@ -8,7 +8,7 @@ var scene = fake.scene();
   var callback = scene.callback();
 
   scene
-    .expect(callback)
+    .expectNext(callback)
     .times(2);
 
   // Scene should not verify without callback being called
@@ -31,7 +31,7 @@ var scene = fake.scene();
   var callback = scene.callback();
 
   scene
-    .expect(callback)
+    .expectNext(callback)
     .times(0, 2);
 
   // Scene should not verify right away, since this callback is optional

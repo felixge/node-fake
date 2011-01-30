@@ -6,16 +6,16 @@ var object = {};
 var scene = fake.scene();
 
 (function testInOrder() {
-  scene.anytime(object, 'a');
-  scene.anytime(object, 'b');
+  scene.expectAnytime(object, 'a');
+  scene.expectAnytime(object, 'b');
 
   object.a();
   object.b();
 })();
 
 (function testOutOfOrder() {
-  scene.anytime(object, 'a');
-  scene.anytime(object, 'b');
+  scene.expectAnytime(object, 'a');
+  scene.expectAnytime(object, 'b');
 
   object.b();
   object.a();
