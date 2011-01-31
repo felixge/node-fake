@@ -25,7 +25,7 @@ var scene = fake.scene();
 
   assert.throws(function() {
     callback(arg);
-  }, /count/i);
+  }, /unexpected argument count/i);
 
   scene.reset();
 })();
@@ -41,7 +41,7 @@ var scene = fake.scene();
   assert.throws(function() {
     var otherArg = {any: 'value 2'};
     callback(otherArg);
-  }, /different args/i);
+  }, /unexpected argument #1/i);
 
   scene.reset();
 })();
