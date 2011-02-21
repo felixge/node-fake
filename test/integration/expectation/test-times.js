@@ -14,7 +14,7 @@ var scene = fake.scene();
   // Scene should not verify without callback being called
   assert.throws(function() {
     scene.verify();
-  }, /unsatisifed/i);
+  }, /unsatisfied/i);
 
   // Scene should verify after two calls
   callback();
@@ -24,7 +24,7 @@ var scene = fake.scene();
   // Calling callback a third time should raise an error again
   assert.throws(function() {
     callback();
-  }, /unexpected/);
+  }, /called too often/i);
 })();
 
 (function testZeroToTwoTimes() {
@@ -34,7 +34,7 @@ var scene = fake.scene();
     .expectNext(callback)
     .times(0, 2);
 
-  // Scene should not verify right away, since this callback is optional
+  // Scene should verify right away, since this callback is optional
   scene.verify();
 
   // Same should be true after the next two callbacks
@@ -45,5 +45,5 @@ var scene = fake.scene();
   // The third callback should cause trouble
   assert.throws(function() {
     callback();
-  }, /unexpected/i);
+  }, /called too often/i);
 })();

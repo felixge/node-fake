@@ -1,3 +1,6 @@
+console.log('disabled');
+return;
+
 var common = require('../../common');
 var assert = common.assert;
 var fake = common.fake;
