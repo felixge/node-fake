@@ -17,3 +17,16 @@ var callback = scene.callback();
   callback();
   scene.verify();
 })();
+
+(function testNamedVsUnnamedCallback() {
+  var named = scene.callback('my_callback');
+  var unnamed = scene.callback();
+
+  scene.expectNext(unnamed);
+
+  assert.throws(function() {
+    named();
+  }, /anonymous[\s\S]*my_callback/);
+
+  scene.reset();
+})();
