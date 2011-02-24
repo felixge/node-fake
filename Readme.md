@@ -16,17 +16,14 @@ competition.
 The goal for this module is to enable you to test **every** aspect of a piece
 of JavaScript code.
 
-This is done by providing a sandbox system that lets you prepare any kind of
-environment for your source file before loading it.
+This is accomplished by comining the following three classes.
 
-Once you have loaded the source file you are testing, you can create a scene
-object that lets you describe and fake the collaboration of the function under
-test with other functions and objects.
-
-Let's say you want to test this
-
-
-    var fake = require('fake');
+* `Sandbox`: Allows you to load any piece of JavaScript code into an isolated
+and pre-configured environment.
+* `Scene`: Allows you to stub, mock and fake methods as well as defining the
+order in which you expect them to be called.
+* `Test`: Provides a simple test framework based on the two classes above. You
+can choose to use this class, or just use the other two within your own system.
 
 ## Todo
 
