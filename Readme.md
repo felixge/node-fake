@@ -1,3 +1,5 @@
+**Current Status:** This library is currently under development. Do not use it yet.
+
 # Fake
 
 Test one thing at a time, fake the rest.
@@ -6,10 +8,6 @@ Test one thing at a time, fake the rest.
 
 This library is for those of you who wish to apply mathematical rigor to their
 unit testing.
-
-## Current Status
-
-This library is currently under development. Do not use it yet.
 
 ## Overview
 
