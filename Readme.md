@@ -7,6 +7,10 @@ Test one thing at a time, fake the rest.
 This library is for those of you who wish to apply mathematical rigor to their
 unit testing.
 
+## Current Status
+
+This library is currently under development. Do not use it yet.
+
 ## Overview
 
 The goal for this module is to enable you to test **every** aspect of a piece
