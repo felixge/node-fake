@@ -12,7 +12,7 @@ unit testing.
 The goal for this module is to enable you to test **every** aspect of a piece
 of JavaScript code.
 
-This is accomplished by comining the following three classes.
+This is accomplished by combining the following three classes.
 
 * `Sandbox`: Allows you to load any piece of JavaScript code into an isolated
 and pre-configured environment.
