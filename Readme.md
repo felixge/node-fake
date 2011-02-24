@@ -1,6 +1,6 @@
 # Fake
 
-Isolate your tests by faking anything outside of the function you are testing.
+Test one thing at a time, fake the rest.
 
 ## Target Audience
 
