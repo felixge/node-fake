@@ -18,8 +18,8 @@ This is accomplished by combining the following three classes.
 and pre-configured environment.
 * `Scene`: Allows you to stub, mock and fake methods as well as defining the
 order in which you expect them to be called.
-* `Test`: Provides a simple test framework based on the two classes above. You
-can choose to use this class, or just use the other two within your own system.
+* `Test`: Provides a simple test framework based on the two classes above. This
+class is entirely optional.
 
 ## Todo
 
