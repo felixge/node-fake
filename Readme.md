@@ -7,10 +7,6 @@ Isolate your tests by faking anything outside of the function you are testing.
 This library is for those of you who wish to apply mathematical rigor to their
 unit testing.
 
-If you think a few smoke tests are all it takes to write good software, get
-yourself some syntactical sugar & color highlighted output from the
-competition.
-
 ## Overview
 
 The goal for this module is to enable you to test **every** aspect of a piece
