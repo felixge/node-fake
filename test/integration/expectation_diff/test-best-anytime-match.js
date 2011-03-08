@@ -6,6 +6,8 @@ var scene = fake.scene();
 
 (function testRightArgCountWins() {
   var callback = scene.callback();
+  var expectedContext = {any: 'expected context'};
+  var unexpectedContext = {any: 'unexpected context'};
 
   scene.expectAnytime(callback);
 
@@ -16,16 +18,15 @@ var scene = fake.scene();
 
   scene.expectAnytime(callback);
 
-  var context = {any: 'object 2'};
   scene
     .expectAnytime(callback)
-    .inContext(context);
+    .inContext(expectedContext);
 
-  callback(arg);
+  callback.call(unexpectedContext, arg);
 
-  callback.call(context);
+  callback.call(expectedContext);
 
-  callback();
+  callback.call(unexpectedContext);
 
-  callback();
+  callback.call(unexpectedContext);
 })();

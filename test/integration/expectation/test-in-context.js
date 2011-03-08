@@ -5,15 +5,16 @@ var fake = common.fake;
 var scene = fake.scene();
 
 (function testOutOfContext() {
-  var context = {};
+  var expectedContext = {any: 'expected context'};
+  var unexpectedContext = {any: 'unexpected context'};
   var callback = scene.callback();
 
   scene
     .expectNext(callback)
-    .inContext(context);
+    .inContext(expectedContext);
 
   assert.throws(function() {
-    callback();
+    callback.call(unexpectedContext);
   }, /context/i);
 
   scene.reset();
