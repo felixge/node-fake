@@ -12,14 +12,9 @@ var scene = fake.scene();
 (function testExpectationNotFullfilled() {
   scene.expectAnytime(object, 'someMethod');
 
-  var exception;
-  try {
+  assert.throws(function() {
     scene.verify();
-  } catch (e) {
-    exception = e;
-  }
-
-  assert.ok(exception);
+  }, /expected a different call/i);
 })();
 
 (function testExpectationFullfilled() {
