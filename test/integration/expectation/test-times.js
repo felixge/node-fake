@@ -14,7 +14,7 @@ var scene = fake.scene();
   // Scene should not verify without callback being called
   assert.throws(function() {
     scene.verify();
-  }, /unsatisfied/i);
+  }, /callee/i);
 
   // Scene should verify after two calls
   callback();

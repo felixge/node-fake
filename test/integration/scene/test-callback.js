@@ -10,7 +10,7 @@ var callback = scene.callback();
 
   assert.throws(function() {
     scene.verify();
-  }, /unsatisfied/i);
+  }, /callee/i);
 })();
 
 (function testCallbackFired() {
