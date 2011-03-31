@@ -1,1 +1,1 @@
-module.exports = require('./lib/fake');
+module.exports = require('./node_modules/fake');
