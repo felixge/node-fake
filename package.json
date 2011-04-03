@@ -2,7 +2,7 @@
   "name": "fake",
   "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
   "description": "Test your JavaScript with focused programmer tests. Fake depedencies.",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "main": "./lib/fake",
   "engines": {
     "node": ">=0.4.0"
