@@ -22,6 +22,9 @@ order in which you expect them to be called.
 
 ## Todo
 
+* Allow registering scene objects after the fact
+* Maybe rename the module to scene?
+* Move stacktrace into own module
 * Useful error reporting
 * Partial arguments matching
 * Become self-testing
