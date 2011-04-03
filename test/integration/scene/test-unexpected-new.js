@@ -9,6 +9,6 @@ var scene = fake.scene();
   scene.fakeFunction(object, 'a');
 
   assert.throws(function() {
-    object.a();
-  }, /Unexpected call.+"Object#a".+no calls/i);
+    new object.a();
+  }, /Unexpected call.+"new Object#a".+no calls/i);
 })();
