@@ -16,8 +16,6 @@ of JavaScript code.
 
 This is accomplished by combining the following three classes.
 
-* `Sandbox`: Allows you to load any piece of JavaScript code into an isolated
-and pre-configured environment.
 * `Scene`: Allows you to stub, mock and fake methods as well as defining the
 order in which you expect them to be called.
 
