@@ -1,0 +1,89 @@
+// @TODO refactor to use node-microtest
+var common = require('../../common');
+var assert = common.assert;
+var scene = common.fake.scene();
+
+var OBJECT = {some: 'object'};
+var METHOD = 'some method';
+var TIMES = 99;
+var WITH_ARGS = ['some', 'args'];
+var AND_RETURN = {some: 'return value'};
+
+var hadError = false;
+
+// object, method, times, withArgs, andReturn
+try {
+  var params = scene._mangleParams([OBJECT, METHOD, TIMES, WITH_ARGS, AND_RETURN]);
+
+  assert.strictEqual(params.object, OBJECT);
+  assert.strictEqual(params.method, METHOD);
+  assert.strictEqual(params.times, TIMES);
+  assert.strictEqual(params.withArgs, WITH_ARGS);
+  assert.strictEqual(params.andReturn, AND_RETURN);
+} catch (e) {
+  hadError = true;
+  console.error(e.stack);
+}
+
+// object, method, withArgs, andReturn
+try {
+  var params = scene._mangleParams([OBJECT, METHOD, WITH_ARGS, AND_RETURN]);
+
+  assert.strictEqual(params.object, OBJECT);
+  assert.strictEqual(params.method, METHOD);
+  assert.strictEqual(params.times, 1);
+  assert.strictEqual(params.withArgs, WITH_ARGS);
+  assert.strictEqual(params.andReturn, AND_RETURN);
+} catch (e) {
+  hadError = true;
+  console.error(e.stack);
+}
+
+// object, method, null, andReturn
+try {
+  var params = scene._mangleParams([OBJECT, METHOD, null, AND_RETURN]);
+
+  assert.strictEqual(params.object, OBJECT);
+  assert.strictEqual(params.method, METHOD);
+  assert.strictEqual(params.times, 1);
+  assert.strictEqual(params.withArgs, null);
+  assert.strictEqual(params.andReturn, AND_RETURN);
+} catch (e) {
+  hadError = true;
+  console.error(e.stack);
+}
+
+// object, method, times
+try {
+  var params = scene._mangleParams([OBJECT, METHOD, TIMES]);
+
+  assert.strictEqual(params.object, OBJECT);
+  assert.strictEqual(params.method, METHOD);
+  assert.strictEqual(params.times, TIMES);
+  assert.strictEqual(params.withArgs, undefined);
+  assert.strictEqual(params.andReturn, undefined);
+} catch (e) {
+  hadError = true;
+  console.error(e.stack);
+}
+
+// 'new', method, times, withArgs, andReturn
+try {
+  var params = scene._mangleParams(['new', OBJECT, TIMES, WITH_ARGS, AND_RETURN]);
+
+  assert.strictEqual(params.object, OBJECT);
+  assert.strictEqual(params.viaNew, true);
+  assert.strictEqual(params.times, TIMES);
+  assert.strictEqual(params.withArgs, WITH_ARGS);
+  assert.strictEqual(params.andReturn, AND_RETURN);
+} catch (e) {
+  hadError = true;
+  console.error(e.stack);
+}
+
+// 'new', method, withArgs, andReturn
+// 'new', method, null, andReturn
+
+if (hadError) {
+  process.reallyExit(1);
+}
