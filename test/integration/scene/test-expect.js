@@ -18,8 +18,8 @@ var scene = fake.scene();
   scene.expectNext(object, 'b');
 
   assert.throws(function() {
-    object.b();
-  }, /different call/);
+    new object.b();
+  }, /different call[\s\S]+got: new object#b/i);
 
   scene.reset();
 })();
