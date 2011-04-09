@@ -8,6 +8,7 @@ var METHOD = 'some method';
 var TIMES = 99;
 var WITH_ARGS = ['some', 'args'];
 var AND_RETURN = {some: 'return value'};
+var FUNCTION = function someFunction() {};
 
 var hadError = false;
 
@@ -61,6 +62,34 @@ try {
   assert.strictEqual(params.method, METHOD);
   assert.strictEqual(params.times, TIMES);
   assert.strictEqual(params.withArgs, undefined);
+  assert.strictEqual(params.andReturn, undefined);
+} catch (e) {
+  hadError = true;
+  console.error(e.stack);
+}
+
+// object, method, function
+try {
+  var params = scene._mangleParams([OBJECT, METHOD, FUNCTION]);
+
+  assert.strictEqual(params.object, OBJECT);
+  assert.strictEqual(params.method, METHOD);
+  assert.strictEqual(params.andHandle, FUNCTION);
+  assert.strictEqual(params.withArgs, undefined);
+  assert.strictEqual(params.andReturn, undefined);
+} catch (e) {
+  hadError = true;
+  console.error(e.stack);
+}
+
+// object, method, withArgs, function
+try {
+  var params = scene._mangleParams([OBJECT, METHOD, WITH_ARGS, FUNCTION]);
+
+  assert.strictEqual(params.object, OBJECT);
+  assert.strictEqual(params.method, METHOD);
+  assert.strictEqual(params.withArgs, WITH_ARGS);
+  assert.strictEqual(params.andHandle, FUNCTION);
   assert.strictEqual(params.andReturn, undefined);
 } catch (e) {
   hadError = true;
