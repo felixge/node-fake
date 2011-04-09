@@ -22,6 +22,7 @@ order in which you expect them to be called.
 
 ## Todo
 
+* Report non-matching anytime expectations if they are the closest match
 * Allow registering scene objects after the fact
 * Maybe rename the module to scene?
 * Move stacktrace into own module
