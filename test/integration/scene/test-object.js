@@ -8,8 +8,8 @@ var scene = fake.scene();
   var A = scene.object('A');
   var B = scene.object('B');
 
-  scene.expectNext(A, 'foo');
-  scene.expectNext(B, 'bar');
+  scene.expect(A, 'foo');
+  scene.expect(B, 'bar');
 
   assert.throws(function() {
     B.bar();

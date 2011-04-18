@@ -9,7 +9,7 @@ var scene = fake.scene();
   var callback = scene.callback();
 
   scene
-    .expectNext(callback)
+    .expect(callback)
     .withArgs(arg);
 
   callback(arg);
@@ -20,7 +20,7 @@ var scene = fake.scene();
   var callback = scene.callback();
 
   scene
-    .expectNext(callback)
+    .expect(callback)
     .withArgs();
 
   assert.throws(function() {
@@ -35,7 +35,7 @@ var scene = fake.scene();
   var callback = scene.callback();
 
   scene
-    .expectNext(callback)
+    .expect(callback)
     .withArgs(arg);
 
   assert.throws(function() {

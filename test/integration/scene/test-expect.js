@@ -6,16 +6,16 @@ var object = {};
 var scene = fake.scene();
 
 (function testInOrder() {
-  scene.expectNext(object, 'a');
-  scene.expectNext(object, 'b');
+  scene.expect(object, 'a');
+  scene.expect(object, 'b');
 
   object.a();
   object.b();
 })();
 
 (function testOutOfOrder() {
-  scene.expectNext(object, 'a');
-  scene.expectNext(object, 'b');
+  scene.expect(object, 'a');
+  scene.expect(object, 'b');
 
   assert.throws(function() {
     new object.b();

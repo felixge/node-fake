@@ -6,7 +6,7 @@ var scene = fake.scene();
 
 var callback = scene.callback();
 (function testCallbackNotFired() {
-  scene.expectNext(callback);
+  scene.expect(callback);
 
   assert.throws(function() {
     scene.verify();
@@ -22,7 +22,7 @@ var callback = scene.callback();
   var named = scene.callback('my_callback');
   var unnamed = scene.callback();
 
-  scene.expectNext(unnamed);
+  scene.expect(unnamed);
 
   assert.throws(function() {
     named();

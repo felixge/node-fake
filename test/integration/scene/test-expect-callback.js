@@ -5,7 +5,7 @@ var fake = common.fake;
 var scene = fake.scene();
 
 (function testCallbackNotFired() {
-  var cb = scene.expectNext();
+  var cb = scene.expect();
 
   assert.throws(function() {
     scene.verify();
