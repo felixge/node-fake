@@ -10,5 +10,5 @@ var scene = fake.scene();
 
   assert.throws(function() {
     new object.a();
-  }, /Unexpected call.+"new Object#a".+no calls/i);
+  }, /Unexpected call.+"new Object#a\(\)".+no calls/i);
 })();
