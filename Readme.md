@@ -4,21 +4,9 @@
 
 Test one thing at a time, fake the rest.
 
-## Target Audience
+## Tutorial
 
-This library is for those of you who wish to apply mathematical rigor to their
-unit testing.
-
-## Overview
-
-The goal for this module is to enable you to test **every** aspect of a piece
-of JavaScript code.
-
-This is accomplished by combining the following three classes.
-
-* `Scene`: Allows you to stub, mock and fake methods as well as defining the
-order in which you expect them to be called.
-
+Todo
 
 ## Todo
 
