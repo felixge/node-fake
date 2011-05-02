@@ -11,6 +11,8 @@ var fake = fake.create();
 
   object.a();
   object.b();
+
+  fake.reset();
 })();
 
 (function testOutOfOrder() {
@@ -19,4 +21,6 @@ var fake = fake.create();
 
   object.b();
   object.a();
+
+  fake.reset();
 })();

@@ -11,7 +11,6 @@ Todo
 ## Todo
 
 * Report non-matching anytime expectations if they are the closest match
-* Allow registering fake objects after the fact
 * Maybe rename the module to fake?
 * Move stacktrace into own module
 * Useful error reporting
