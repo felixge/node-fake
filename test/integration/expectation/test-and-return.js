@@ -2,14 +2,14 @@ var common = require('../../common');
 var assert = common.assert;
 var fake = common.fake;
 
-var scene = fake.scene();
+var fake = fake.create();
 
 (function testAndReturn() {
   var val = {any: 'object 1'};
 
-  var callback = scene.callback();
+  var callback = fake.callback();
 
-  scene
+  fake
     .expect(callback)
     .andReturn(val);
 

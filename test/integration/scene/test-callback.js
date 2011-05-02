@@ -2,31 +2,31 @@ var common = require('../../common');
 var assert = common.assert;
 var fake = common.fake;
 
-var scene = fake.scene();
+var fake = fake.create();
 
-var callback = scene.callback();
+var callback = fake.callback();
 (function testCallbackNotFired() {
-  scene.expect(callback);
+  fake.expect(callback);
 
   assert.throws(function() {
-    scene.verify();
+    fake.verify();
   }, /callee/i);
 })();
 
 (function testCallbackFired() {
   callback();
-  scene.verify();
+  fake.verify();
 })();
 
 (function testNamedVsUnnamedCallback() {
-  var named = scene.callback('my_callback');
-  var unnamed = scene.callback();
+  var named = fake.callback('my_callback');
+  var unnamed = fake.callback();
 
-  scene.expect(unnamed);
+  fake.expect(unnamed);
 
   assert.throws(function() {
     named();
   }, /anonymous[\s\S]*my_callback/);
 
-  scene.reset();
+  fake.reset();
 })();

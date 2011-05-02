@@ -2,13 +2,13 @@ var common = require('../../common');
 var assert = common.assert;
 var fake = common.fake;
 
-var scene = fake.scene();
+var fake = fake.create();
 
 (function testRightArgs() {
   var arg = {any: 'value'};
-  var callback = scene.callback();
+  var callback = fake.callback();
 
-  scene
+  fake
     .expect(callback)
     .withArgs(arg);
 
@@ -17,9 +17,9 @@ var scene = fake.scene();
 
 (function testWrongArgCount() {
   var arg = {any: 'value 1'};
-  var callback = scene.callback();
+  var callback = fake.callback();
 
-  scene
+  fake
     .expect(callback)
     .withArgs();
 
@@ -27,14 +27,14 @@ var scene = fake.scene();
     callback(arg);
   }, /unexpected argument count/i);
 
-  scene.reset();
+  fake.reset();
 })();
 
 (function testWrongArg() {
   var arg = {any: 'value 1'};
-  var callback = scene.callback();
+  var callback = fake.callback();
 
-  scene
+  fake
     .expect(callback)
     .withArgs(arg);
 
@@ -43,5 +43,5 @@ var scene = fake.scene();
     callback(otherArg);
   }, /unexpected argument #1/i);
 
-  scene.reset();
+  fake.reset();
 })();

@@ -11,12 +11,12 @@ Todo
 ## Todo
 
 * Report non-matching anytime expectations if they are the closest match
-* Allow registering scene objects after the fact
-* Maybe rename the module to scene?
+* Allow registering fake objects after the fact
+* Maybe rename the module to fake?
 * Move stacktrace into own module
 * Useful error reporting
 * Partial arguments matching
 * Become self-testing
 * Documentation
-* Handle fake functions being claimed by multiple scenes
+* Handle fake functions being claimed by multiple fakes
 * NodeModuleScene / BrowserScriptScene?

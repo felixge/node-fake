@@ -2,14 +2,14 @@ var common = require('../../common');
 var assert = common.assert;
 var fake = common.fake;
 
-var scene = fake.scene();
+var fake = fake.create();
 
 (function testOutOfContext() {
   var expectedContext = {any: 'expected context'};
   var unexpectedContext = {any: 'unexpected context'};
-  var callback = scene.callback();
+  var callback = fake.callback();
 
-  scene
+  fake
     .expect(callback)
     .inContext(expectedContext);
 
@@ -17,14 +17,14 @@ var scene = fake.scene();
     callback.call(unexpectedContext);
   }, /context/i);
 
-  scene.reset();
+  fake.reset();
 })();
 
 (function testInContext() {
   var context = {};
-  var callback = scene.callback();
+  var callback = fake.callback();
 
-  scene
+  fake
     .expect(callback)
     .inContext(context);
 

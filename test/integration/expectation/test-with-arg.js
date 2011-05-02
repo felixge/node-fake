@@ -2,13 +2,13 @@ var common = require('../../common');
 var assert = common.assert;
 var fake = common.fake;
 
-var scene = fake.scene();
+var fake = fake.create();
 
 (function testMatchArgOne() {
   var arg = {any: 'value'};
-  var callback = scene.callback();
+  var callback = fake.callback();
 
-  scene
+  fake
     .expect(callback)
     .withArg(1, arg);
 
@@ -17,14 +17,14 @@ var scene = fake.scene();
 
 (function testMismatchArgOne() {
   var arg = {any: 'value'};
-  var callback = scene.callback();
+  var callback = fake.callback();
 
-  scene
+  fake
     .expect(callback)
     .withArg(1, arg);
 
   assert.throws(function() {
     callback();
   });
-  scene.reset();
+  fake.reset();
 })();

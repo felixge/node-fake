@@ -2,23 +2,23 @@ var common = require('../../common');
 var assert = common.assert;
 var fake = common.fake;
 
-var scene = fake.scene();
+var fake = fake.create();
 
 (function testRightArgCountWins() {
-  var callback = scene.callback();
+  var callback = fake.callback();
   var expectedContext = {any: 'expected context'};
   var unexpectedContext = {any: 'unexpected context'};
 
-  scene.expectAnytime(callback);
+  fake.expectAnytime(callback);
 
   var arg = {any: 'object 1'};
-  scene
+  fake
     .expectAnytime(callback)
     .withArgs(arg);
 
-  scene.expectAnytime(callback);
+  fake.expectAnytime(callback);
 
-  scene
+  fake
     .expectAnytime(callback)
     .inContext(expectedContext);
 

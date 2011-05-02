@@ -6,4 +6,5 @@ common.assert = require('assert');
 common.fake = fake;
 common.dir = {
   fixture: path.join(__dirname, '/fixture'),
+  lib: path.join(__dirname, '../lib'),
 };

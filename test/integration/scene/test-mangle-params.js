@@ -1,7 +1,7 @@
 // @TODO refactor to use node-microtest
 var common = require('../../common');
 var assert = common.assert;
-var scene = common.fake.scene();
+var fake = common.fake.create();
 
 var OBJECT = {some: 'object'};
 var METHOD = 'some method';
@@ -14,7 +14,7 @@ var hadError = false;
 
 // object, method, times, withArgs, andReturn
 try {
-  var params = scene._mangleParams([OBJECT, METHOD, TIMES, WITH_ARGS, AND_RETURN]);
+  var params = fake._mangleParams([OBJECT, METHOD, TIMES, WITH_ARGS, AND_RETURN]);
 
   assert.strictEqual(params.object, OBJECT);
   assert.strictEqual(params.method, METHOD);
@@ -28,7 +28,7 @@ try {
 
 // object, method, withArgs, andReturn
 try {
-  var params = scene._mangleParams([OBJECT, METHOD, WITH_ARGS, AND_RETURN]);
+  var params = fake._mangleParams([OBJECT, METHOD, WITH_ARGS, AND_RETURN]);
 
   assert.strictEqual(params.object, OBJECT);
   assert.strictEqual(params.method, METHOD);
@@ -42,7 +42,7 @@ try {
 
 // object, method, null, andReturn
 try {
-  var params = scene._mangleParams([OBJECT, METHOD, null, AND_RETURN]);
+  var params = fake._mangleParams([OBJECT, METHOD, null, AND_RETURN]);
 
   assert.strictEqual(params.object, OBJECT);
   assert.strictEqual(params.method, METHOD);
@@ -56,7 +56,7 @@ try {
 
 // object, method, times
 try {
-  var params = scene._mangleParams([OBJECT, METHOD, TIMES]);
+  var params = fake._mangleParams([OBJECT, METHOD, TIMES]);
 
   assert.strictEqual(params.object, OBJECT);
   assert.strictEqual(params.method, METHOD);
@@ -70,7 +70,7 @@ try {
 
 // object, method, function
 try {
-  var params = scene._mangleParams([OBJECT, METHOD, FUNCTION]);
+  var params = fake._mangleParams([OBJECT, METHOD, FUNCTION]);
 
   assert.strictEqual(params.object, OBJECT);
   assert.strictEqual(params.method, METHOD);
@@ -84,7 +84,7 @@ try {
 
 // object, method, withArgs, function
 try {
-  var params = scene._mangleParams([OBJECT, METHOD, WITH_ARGS, FUNCTION]);
+  var params = fake._mangleParams([OBJECT, METHOD, WITH_ARGS, FUNCTION]);
 
   assert.strictEqual(params.object, OBJECT);
   assert.strictEqual(params.method, METHOD);
@@ -98,7 +98,7 @@ try {
 
 // 'new', method, times, withArgs, andReturn
 try {
-  var params = scene._mangleParams(['new', OBJECT, TIMES, WITH_ARGS, AND_RETURN]);
+  var params = fake._mangleParams(['new', OBJECT, TIMES, WITH_ARGS, AND_RETURN]);
 
   assert.strictEqual(params.object, OBJECT);
   assert.strictEqual(params.viaNew, true);

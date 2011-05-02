@@ -3,10 +3,10 @@ var assert = common.assert;
 var fake = common.fake;
 
 var object = {};
-var scene = fake.scene();
+var fake = fake.create();
 
 (function testUnexpectedCall() {
-  scene.fakeFunction(object, 'a');
+  fake.fakeFunction(object, 'a');
 
   assert.throws(function() {
     new object.a();

@@ -2,13 +2,13 @@ var common = require('../../common');
 var assert = common.assert;
 var fake = common.fake;
 
-var scene = fake.scene();
+var fake = fake.create();
 
 (function testCallbackNotFired() {
-  var cb = scene.expect();
+  var cb = fake.expect();
 
   assert.throws(function() {
-    scene.verify();
+    fake.verify();
   }, /callee/i);
 
   cb();

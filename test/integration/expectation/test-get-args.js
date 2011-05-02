@@ -6,10 +6,10 @@ var assert = common.assert;
 var fake = common.fake;
 
 var object = {};
-var scene = fake.scene();
+var fake = fake.create();
 
 (function testGetReferenceToLastArgs() {
-  var args = scene
+  var args = fake
     .expectAnytime(object, 'someMethod')
     .times(0, Infinity)
     .getArgs();

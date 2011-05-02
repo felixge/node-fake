@@ -3,19 +3,19 @@ var assert = common.assert;
 var fake = common.fake;
 
 var object = {};
-var scene = fake.scene();
+var fake = fake.create();
 
 (function testInOrder() {
-  scene.expectAnytime(object, 'a');
-  scene.expectAnytime(object, 'b');
+  fake.expectAnytime(object, 'a');
+  fake.expectAnytime(object, 'b');
 
   object.a();
   object.b();
 })();
 
 (function testOutOfOrder() {
-  scene.expectAnytime(object, 'a');
-  scene.expectAnytime(object, 'b');
+  fake.expectAnytime(object, 'a');
+  fake.expectAnytime(object, 'b');
 
   object.b();
   object.a();

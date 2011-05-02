@@ -2,24 +2,24 @@ var common = require('../../common');
 var assert = common.assert;
 var fake = common.fake;
 
-var scene = fake.scene();
+var fake = fake.create();
 
 (function testTwoTimes() {
-  var callback = scene.callback();
+  var callback = fake.callback();
 
-  scene
+  fake
     .expect(callback)
     .times(2);
 
-  // Scene should not verify without callback being called
+  // Fake should not verify without callback being called
   assert.throws(function() {
-    scene.verify();
+    fake.verify();
   }, /callee/i);
 
-  // Scene should verify after two calls
+  // Fake should verify after two calls
   callback();
   callback();
-  scene.verify();
+  fake.verify();
 
   // Calling callback a third time should raise an error again
   assert.throws(function() {
@@ -28,19 +28,19 @@ var scene = fake.scene();
 })();
 
 (function testZeroToTwoTimes() {
-  var callback = scene.callback();
+  var callback = fake.callback();
 
-  scene
+  fake
     .expect(callback)
     .times(0, 2);
 
-  // Scene should verify right away, since this callback is optional
-  scene.verify();
+  // Fake should verify right away, since this callback is optional
+  fake.verify();
 
   // Same should be true after the next two callbacks
   callback();
   callback();
-  scene.verify();
+  fake.verify();
 
   // The third callback should cause trouble
   assert.throws(function() {

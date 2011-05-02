@@ -2,29 +2,29 @@ var common = require('../../common');
 var assert = common.assert;
 var fake = common.fake;
 
-var scene = fake.scene();
+var fake = fake.create();
 
-var MyClass = scene.class();
+var MyClass = fake.class();
 (function testNewMyClass() {
-  scene.expect('new', MyClass)
+  fake.expect('new', MyClass)
 
   // Should not verify initially
   assert.throws(function() {
-    scene.verify();
+    fake.verify();
   });
 
   var myClass = new MyClass();
-  scene.verify();
+  fake.verify();
 })();
 
 (function testNewMyClass() {
-  scene.expect('new', MyClass)
+  fake.expect('new', MyClass)
 
   // Invoking the function without new should fail
   assert.throws(function() {
     MyClass();
   });
 
-  // We don't want to satisfy this expecation, so let's reset out scene
-  scene.reset();
+  // We don't want to satisfy this expecation, so let's reset out fake
+  fake.reset();
 })();

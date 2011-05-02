@@ -3,21 +3,21 @@ var assert = common.assert;
 var fake = common.fake;
 
 var object = {};
-var scene = fake.scene();
+var fake = fake.create();
 
-(function testNewSceneVerifies() {
-  scene.verify();
+(function testNewFakeVerifies() {
+  fake.verify();
 })();
 
 (function testExpectationNotFullfilled() {
-  scene.expectAnytime(object, 'someMethod');
+  fake.expectAnytime(object, 'someMethod');
 
   assert.throws(function() {
-    scene.verify();
+    fake.verify();
   }, /expected a different call/i);
 })();
 
 (function testExpectationFullfilled() {
   object.someMethod();
-  scene.verify();
+  fake.verify();
 })();

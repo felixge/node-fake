@@ -2,18 +2,18 @@ var common = require('../../common');
 var assert = common.assert;
 var fake = common.fake;
 
-var scene = fake.scene();
+var fake = fake.create();
 
 (function testCallbackNotFired() {
-  var A = scene.object('A');
-  var B = scene.object('B');
+  var A = fake.object('A');
+  var B = fake.object('B');
 
-  scene.expect(A, 'foo');
-  scene.expect(B, 'bar');
+  fake.expect(A, 'foo');
+  fake.expect(B, 'bar');
 
   assert.throws(function() {
     B.bar();
   }, /A#foo[\s\S]*B#bar/i);
 
-  scene.reset();
+  fake.reset();
 })();
