@@ -110,8 +110,19 @@ try {
   console.error(e.stack);
 }
 
-// 'new', method, withArgs, andReturn
-// 'new', method, null, andReturn
+// fakeFn, times, withArgs, andReturn
+try {
+  var params = fake._mangleParams([FUNCTION, TIMES, WITH_ARGS, AND_RETURN]);
+
+  assert.strictEqual(params.object, FUNCTION);
+  assert.strictEqual(params.method, null);
+  assert.strictEqual(params.times, TIMES);
+  assert.strictEqual(params.withArgs, WITH_ARGS);
+  assert.strictEqual(params.andReturn, AND_RETURN);
+} catch (e) {
+  hadError = true;
+  console.error(e.stack);
+}
 
 if (hadError) {
   process.reallyExit(1);
