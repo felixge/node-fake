@@ -23,3 +23,12 @@ var fake = fake.create();
 
   fake.reset();
 })();
+
+(function testNoCallsExpected() {
+  fake.expect(object, 'a', 0);
+  fake.stub(object, 'b', 0);
+
+  assert.throws(function() {
+    object.b();
+  }, /no calls were expected/i);
+})();
