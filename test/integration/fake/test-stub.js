@@ -6,12 +6,27 @@ var object = {};
 var fake = fake.create();
 
 (function testInOrder() {
-  fake.stub(object, 'a', null, true);
+  var A = {}, B = {};
+  fake.stub(object, 'a', null, A);
+  fake.stub(object, 'b', null, B);
 
   fake.verify();
 
-  assert.ok(object.a());
-  assert.ok(object.a());
+  assert.strictEqual(object.a(), A);
+  assert.strictEqual(object.b(), B);
+
+  fake.reset();
+})();
+
+(function testOutOfOrder() {
+  var A = {}, B = {};
+  fake.stub(object, 'a', null, A);
+  fake.stub(object, 'b', null, B);
+
+  fake.verify();
+
+  assert.strictEqual(object.b(), B);
+  assert.strictEqual(object.a(), A);
 
   fake.reset();
 })();
@@ -34,4 +49,14 @@ var fake = fake.create();
 
   assert.equal(object.c('a'), 2);
   assert.equal(object.c(), 1);
+})();
+
+(function testStubsCanBeCalledOnlyOnce() {
+  var R = {};
+  fake.stub(object, 'd', null, R);
+
+  assert.strictEqual(object.d(), R);
+  assert.throws(function() {
+    assert.strictEqual(object.d(), R);
+  }, /unexpected call/i);
 })();
