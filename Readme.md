@@ -33,7 +33,8 @@ expectation is not verified before the process exits.
 
 ### fake.stub(object, method, [times, withArgs, andReturn | andHandle])
 
-Set up an optional expectation. This will never throw an error.
+Set up an optional expectation. This is useful for pre-filling return values
+for functions, without caring if the function is ever called.
 
 ## Todo
 
