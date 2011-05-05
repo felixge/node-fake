@@ -18,8 +18,8 @@ var fake = fake.create();
   fake.expect(object, 'b');
 
   assert.throws(function() {
-    new object.b();
-  }, /different call[\s\S]+got: new object#b/i);
+    object.b();
+  }, /different call[\s\S]+expected: object#a\ngot: object#b/i);
 
   fake.reset();
 })();
