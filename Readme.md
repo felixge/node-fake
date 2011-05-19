@@ -9,7 +9,7 @@ Test one thing at a time, fake the rest.
 Set an expectation of a method call on an object:
 
 ``` javascript
-var fake = require('fake').create();
+var fake = require('fake')();
 var object = {};
 
 fake.expect(object, 'method');
@@ -18,6 +18,22 @@ object.method();
 ```
 
 If the last `object.method()` call is not present, an exception will be thrown.
+
+Depending on your [approach to TDD][mocksvsstubs], you may prefer to use
+stubbing over mocking instead:
+
+[mocksvsstubs]: http://martinfowler.com/articles/mocksArentStubs.html
+
+``` javascript
+var fake = require('fake')();
+var object = {};
+
+fake.stub(object, 'method');
+
+object.method();
+
+assert.equals(fake.calls(object, 'method').length, 1);
+```
 
 ## API
 
