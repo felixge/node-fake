@@ -28,11 +28,11 @@ stubbing over mocking instead:
 var fake = require('fake')();
 var object = {};
 
-fake.stub(object, 'method');
+var objectMethodCall = fake.stub(object, 'method');
 
 object.method();
 
-assert.equals(fake.calls(object, 'method').length, 1);
+assert.equals(objectMethodCall.calls.length, 1);
 ```
 
 ## API
