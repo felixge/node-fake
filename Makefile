@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 
 test:
-	@node-far test/ -i "test-.*\.js$$"
+	@./test/run.js
 
 .PHONY: test
 
