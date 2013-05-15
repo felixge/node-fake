@@ -11,5 +11,7 @@
     "test": "make test"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "far": "~0.0.7"
+  }
 }
