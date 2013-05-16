@@ -1,0 +1,9 @@
+*.un~
+*.sublime-*
+/node_modules/
+/test/
+/.gitignore
+/.npmignore
+/.travis.yml
+/Makefile
+/sftp-config.json
