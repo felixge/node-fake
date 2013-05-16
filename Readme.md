@@ -1,6 +1,6 @@
 **Current Status:** This library is ready for experimental usage.
 
-# Fake
+# Fake [![Build Status](https://travis-ci.org/alexindigo/node-fake.png?branch=master)](https://travis-ci.org/alexindigo/node-fake)
 
 Test one thing at a time, fake the rest.
 
@@ -55,7 +55,6 @@ for functions, without caring if the function is ever called.
 ## Todo
 
 * Report non-matching anytime expectations if they are the closest match
-* Maybe rename the module to fake?
 * Move stacktrace into own module
 * Useful error reporting
 * Partial arguments matching
