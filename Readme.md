@@ -1,6 +1,6 @@
 **Current Status:** This library is ready for experimental usage.
 
-# Fake [![Build Status](https://travis-ci.org/alexindigo/node-fake.png?branch=master)](https://travis-ci.org/alexindigo/node-fake)
+# Fake [![Build Status](https://travis-ci.org/felixge/node-fake.png?branch=master)](https://travis-ci.org/felixge/node-fake)
 
 Test one thing at a time, fake the rest.
 
