@@ -40,7 +40,7 @@ assert.equals(objectMethodCall.calls.length, 1);
 ### fake.expect(object, method, [times, withArgs, andReturn | andHandle])
 
 Set up an ordered expectation. Calling any other methods controlled by fake
-before this expectation has been satisifed will throw an exception.
+before this expectation has been satisfied will throw an exception.
 
 ### fake.expectAnytime(object, method, [times, withArgs, andReturn | andHandle])
 
@@ -62,3 +62,7 @@ for functions, without caring if the function is ever called.
 * Documentation
 * Handle fake functions being claimed by multiple fakes
 * NodeModuleScene / BrowserScriptScene?
+
+## License
+
+Fake is released under the [MIT](License) license.

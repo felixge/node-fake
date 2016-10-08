@@ -1,7 +1,7 @@
 {
   "name": "fake",
   "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
-  "description": "Test your JavaScript with focused programmer tests. Fake depedencies.",
+  "description": "Test your JavaScript with focused programmer tests. Fake dependencies.",
   "version": "0.2.2",
   "repository": {
     "type": "git",
@@ -9,7 +9,7 @@
   },
   "main": "./lib/fake",
   "engines": {
-    "node": ">=0.4.0"
+    "node": ">=0.8.0"
   },
   "scripts": {
     "test": "make test"
@@ -17,5 +17,6 @@
   "dependencies": {},
   "devDependencies": {
     "far": "~0.0.7"
-  }
+  },
+  "license": "MIT"
 }
